@@ -70,7 +70,7 @@ public class MovieAnalyzer {
   public Map<Integer, Integer> getMovieCountByYear() {
     Map<Integer, Integer> movieCountByYear_pre = movies.stream()
             .collect(Collectors.groupingBy(Movie::getReleased_year, Collectors.summingInt(e -> 1)));
-    Map<Integer, Integer> movieCountByYear = new TreeMap<Integer, Integer>(Collections.reverseOrder());
+    Map<Integer, Integer> movieCountByYear = new TreeMap<>(Collections.reverseOrder());
     movieCountByYear.putAll(movieCountByYear_pre);
     return movieCountByYear;
   }
